@@ -1,0 +1,14 @@
+﻿@model TodoListWebApp.Controllers.StorageServices
+@{
+    ViewBag.Title = "Subscriptions";
+}
+
+<h2>Subscriptions</h2>
+
+
+@foreach (var storageService in Model.StorageService)
+{
+    <div>
+        <h3>@storageService.ServiceName</h3>
+    </div>
+}

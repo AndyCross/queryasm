@@ -1,0 +1,14 @@
+﻿@model Microsoft.WindowsAzure.Management.MediaServices.Models.MediaServicesAccountListResponse
+@{
+    ViewBag.Title = "Media Services";
+}
+
+<h2>Media Services</h2>
+
+
+@foreach (var account in Model.Accounts)
+{
+    <div>
+        <h3>@Html.ActionLink(account.Name, "MediaServicesAccount", "Waml", new { accountName = account.Name}, null) (@account.AccountId)</h3>
+    </div>
+}

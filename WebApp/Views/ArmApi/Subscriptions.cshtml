@@ -1,0 +1,19 @@
+﻿@model TodoListWebApp.Controllers.SubscriptionResponse
+@{
+    ViewBag.Title = "Subscriptions";
+}
+
+<h2>Subscriptions</h2>
+
+
+@foreach (var subscription in Model.value)
+{
+    <div>
+        <h3>@subscription.displayName (@subscription.subscriptionId)</h3>
+        <ul>
+            <li>@Html.ActionLink("Storage (ASM API)", "Storage", "AsmAPI", new { subscriptionId = subscription.subscriptionId }, null)</li>
+            <li>@Html.ActionLink("Storage (WAML)", "Storage", "Waml", new { subscriptionId = subscription.subscriptionId }, null)</li>
+            <li>@Html.ActionLink("MediaServices (WAML)", "MediaServices", "Waml", new { subscriptionId = subscription.subscriptionId}, null)</li>
+        </ul>
+    </div>
+}

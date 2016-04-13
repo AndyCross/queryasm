@@ -1,0 +1,14 @@
+﻿@model Microsoft.WindowsAzure.Management.Storage.Models.StorageAccountListResponse
+@{
+    ViewBag.Title = "Storage Accounts";
+}
+
+<h2>Storage Accounts</h2>
+
+
+@foreach (var account in Model.StorageAccounts)
+{
+    <div>
+        <h3>@account.Name</h3>
+    </div>
+}
